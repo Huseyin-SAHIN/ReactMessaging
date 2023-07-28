@@ -1,0 +1,312 @@
+#connection {
+    display: flex;
+    height: 100vh;
+}
+
+#users {
+    width: calc(100% / 3);
+    max-width: 400px;
+    min-width: 300px;
+    overflow: hidden auto;
+    box-shadow: rgba(0, 0, 0, 0.1) 2px 0 40px 0px;
+    background: #fff;
+}
+
+
+@media screen and (max-width: 900px) {
+    #users {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        transform: translateX(-100%);
+        transition: 1s;
+    }
+
+}
+
+#users .usersTop {
+    padding: 1rem 2rem;
+    background: #333;
+}
+
+#users .usersTop .usersInfo {
+    display: flex;
+    align-items: center;
+}
+
+#users .usersTop .usersInfo .userOperations {
+    display: flex;
+    gap: 1rem;
+    color: #fff;
+    font-size: 30px;
+    margin-left: auto;
+}
+
+#users .usersTop .usersInfo .userOperations svg {
+    cursor: pointer;
+}
+
+#users .usersTop #searchMessage {
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    font-size: 16px;
+    width: 100%;
+    margin-top: 1rem;
+}
+
+#users .usersTop #searchMessage:focus {
+    outline: none;
+}
+
+#users .usersTop h2 {
+    color: #fff;
+}
+
+#users .userMain {
+    display: flex;
+    cursor: pointer;
+    margin: 5px 0;
+    padding: 10px 16px;
+}
+
+#users .userMain.active {
+    background: #ccc;
+}
+
+#users .userMain .userImg {
+    width: 50px;
+    height: 50px;
+}
+
+#users .userMain .userImg img {
+    width: 100%;
+    object-fit: cover;
+    border: 1px solid #ddd;
+    border-radius: 50%;
+    padding: 5px;
+}
+
+#users .userMain .userContent {
+    margin: auto 0 auto 1rem;
+}
+
+#users .userMain .userContent .userContentName {
+    font-weight: bold;
+    font-style: italic;
+}
+
+#users .userMain .userContent .userContentLastMessage {
+    color: #999;
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100px;
+}
+
+#connection .firstPage {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: calc(100% / 3 * 2);
+    gap: 1rem;
+    margin: auto;
+}
+
+
+#connection .firstPage h1 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: italic;
+}
+
+#connection .firstPage h1 span {
+    color: #1877F2;
+}
+
+#connection .firstPage .firstPageInfo {
+    color: #999;
+    font-size: 18px;
+}
+
+.messageMain {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    width: calc(100% / 3 * 2);
+}
+
+#connection .messageTop {
+    display: flex;
+    background: #fff;
+    border-bottom: 2px solid #ddd;
+    padding: 1rem;
+}
+
+#connection .messageTop .userImg {
+    width: 50px;
+    height: 50px;
+    padding: 5px;
+    border: 2px solid #ddd;
+    border-radius: 50%;
+}
+
+#connection .messageTop .userImg img {
+    width: 100%;
+    object-fit: cover;
+}
+
+#connection .messageTop .userName {
+    font-weight: bold;
+    margin: auto;
+}
+
+
+#connection .messageMiddle {
+    overflow: hidden auto;
+    flex: 1;
+    padding: 1rem;
+    word-wrap: break-word;
+    width: 100%;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.messageMain .messageMiddle .message {
+    text-align: end;
+    margin-top: 2px;
+}
+
+.messageMain .messageMiddle .message .messageDate {
+    font-size: 12px;
+    color: #999;
+    margin: 0 10px;
+}
+
+.messageMain .messageMiddle .message .messageItem {
+    display: inline-block;
+    background: #1877F2;
+    padding: 10px;
+    color: #fff;
+    border-radius: 10px;
+    max-width: 80%;
+}
+
+.messageMain .messageMiddle .message.messageLeft {
+    text-align: start !important;
+}
+
+.messageMain .messageMiddle .message.messageLeft .messageItem {
+    background: #333;
+    color: #fff;
+}
+
+#connection .messageBottom {
+    display: flex;
+}
+
+#connection .messageBottom textarea {
+    flex: 1;
+    border: none;
+    font-size: 16px;
+    padding: 16px;
+    resize: none;
+}
+
+textarea::-webkit-scrollbar {
+    display: none;
+}
+
+#connection .messageBottom textarea:focus {
+    outline: none;
+}
+
+#connection .messageBottom .messageSubmitBtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 10px;
+    border: none;
+    background: #333;
+    color: #fff;
+    cursor: pointer;
+    min-width: 50px;
+}
+
+#connection .messageBottom .messageSubmitBtn svg {
+    font-size: 20px;
+}
+
+.ReactModalPortal .ReactModal__Content {
+    inset: 50% !important;
+    transform: translate(-50%, -50%);
+    width: 500px;
+    max-width: 100%;
+    height: 500px;
+}
+
+.ReactModalPortal button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    margin: 1rem 0;
+    background: transparent;
+}
+
+.ReactModalPortal button svg {
+    font-size: 40px;
+    color: #333;
+    display: block;
+}
+
+.ReactModalPortal .newUsers {
+    display: flex;
+    flex-direction: column;
+    overflow-y: hidden auto;
+}
+
+.ReactModalPortal .newUsers h2{
+    padding: 1rem 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.ReactModalPortal .newUsers .user {
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding: 1rem 0;
+    cursor: pointer;
+    gap: 10px;
+    font-weight: bold;
+}
+
+.ReactModalPortal .newUsers .user:nth-child(2n-1) {
+    background: #f9f9f9;
+}
+
+.ReactModalPortal .newUsers .user {
+    border-bottom: 1px solid #ddd;
+}
+
+.ReactModalPortal .newUsers .user .userImg {
+    width: 50px;
+    height: 50px;
+    padding: 5px;
+    border: 2px solid #ddd;
+    border-radius: 50%;
+}
+
+.ReactModalPortal .newUsers .user .userImg img {
+    width: 100%;
+    object-fit: cover;
+}
+
+.ReactModalPortal .newUsers .user .userContent {}
+
+.ReactModalPortal .newUsers .user .userContent .userContentName {}
