@@ -14,7 +14,9 @@ function Users({ accessToken,
   usersList,
   setUsersList,
   setUserName,
-  setConversationId
+  setConversationId,
+  mobileControl,
+  setMobileControl
 }) {
 
   useEffect(() => {
@@ -24,7 +26,6 @@ function Users({ accessToken,
   const [searchTerm, setSearchTerm] = useState("");
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [newContacts, setNewContacts] = useState(false);
-
 
   const openModal = () => {
     setIsModalOpen(true);
@@ -68,7 +69,7 @@ function Users({ accessToken,
   })
 
   return (
-    <div id='users'>
+    <div id='users' className={!mobileControl ? "usersDrawr" : ""}>
       <div className='usersTop'>
         <div className='usersInfo'>
           <h2>Mesajlar</h2>
@@ -111,6 +112,7 @@ function Users({ accessToken,
             setActiveUser(user.to_user.id);
             setUserName(user.to_user.username);
             setConversationId(user.id)
+            setMobileControl(false);
           }}>
           <div className="userImg">
             <img src="https://myeduco.com/wp-content/uploads/2019/03/Blank-profile.png" />

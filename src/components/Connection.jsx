@@ -10,6 +10,7 @@ function Connection({ setIsLoginControl }) {
     const [activeUser, setActiveUser] = useState(null);
     const [conversationId, setConversationId] = useState(null);
     const [messages, setMessagess] = useState([]);
+    const [mobileControl, setMobileControl] = useState(true);
 
     const accessToken = localStorage.getItem("access_token");
 
@@ -28,6 +29,8 @@ function Connection({ setIsLoginControl }) {
                 setUserName={setUserName}
                 setConversationId={setConversationId}
                 setMessagess={setMessagess}
+                mobileControl={mobileControl}
+                setMobileControl={setMobileControl}
             />
             {activeUser !== null ? (
                 <MessageMain
@@ -38,6 +41,7 @@ function Connection({ setIsLoginControl }) {
                     conversationId={conversationId}
                     messages={messages}
                     setMessagess={setMessagess}
+                    setMobileControl={setMobileControl}
                 />) : (
                 <div className='firstPage'>
                     <h1><span>MesajClup</span>'a Hoş geldin</h1>

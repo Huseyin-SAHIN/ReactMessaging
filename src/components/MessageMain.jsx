@@ -4,7 +4,7 @@ import MessageMainTop from './MessageMainTop'
 import MessageMainMiddle from './MessageMainMiddle'
 import MessageMainBottom from './MessageMainBottom'
 
-function MessageMain({ accessToken, activeUser, userName, conversationId }) {
+function MessageMain({ accessToken, activeUser, userName, conversationId, setMobileControl }) {
 
     const [text, setText] = useState("");
     const [messages, setMessagess] = useState([]);
@@ -54,7 +54,7 @@ function MessageMain({ accessToken, activeUser, userName, conversationId }) {
     return (
         <form className='messageMain'>
 
-            <MessageMainTop userName={userName} />
+            <MessageMainTop userName={userName} setMobileControl={setMobileControl} />
             <MessageMainMiddle messages={messages} />
             <MessageMainBottom text={text} setText={setText} fetchPostMessage={fetchPostMessage} fetchMessages={fetchMessages} />
         </form>

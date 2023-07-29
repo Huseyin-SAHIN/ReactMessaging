@@ -34,6 +34,7 @@ function Register() {
                 <form onSubmit={(e) => {
                     e.preventDefault();
                     makePostRequest();
+                    window.open("/", "_self")
                 }}>
                     <input type="text" placeholder='Kullanıcı Adını' required onChange={(e) => setUserName(e.target.value)} />
                     <input type="text" placeholder='Ad' required onChange={(e) => setFirst_name(e.target.value)} />

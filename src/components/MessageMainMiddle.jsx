@@ -1,4 +1,9 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+
+const keepScrollBarAtBottom = () => {
+  const chat = document.querySelector('.messageMiddle');
+  chat.scrollTop = chat.scrollHeight;
+}
 
 function MessageMiddle({ messages }) {
 
@@ -6,6 +11,10 @@ function MessageMiddle({ messages }) {
     const date = new Date(value);
     return `${date.getHours()}:${date.getMinutes()}`;
   }
+
+  useEffect(()=>{
+    keepScrollBarAtBottom();
+  },[messages])
 
   return (
     <div className='messageMiddle'>

@@ -10,19 +10,8 @@
     overflow: hidden auto;
     box-shadow: rgba(0, 0, 0, 0.1) 2px 0 40px 0px;
     background: #fff;
-}
-
-
-@media screen and (max-width: 900px) {
-    #users {
-        position: absolute;
-        top: 0;
-        left: 0;
-        height: 100%;
-        transform: translateX(-100%);
-        transition: 1s;
-    }
-
+    transition: 0.3s;
+    transform: translateX(0);
 }
 
 #users .usersTop {
@@ -141,9 +130,18 @@
 
 #connection .messageTop {
     display: flex;
+    align-items: center;
     background: #fff;
     border-bottom: 2px solid #ddd;
     padding: 1rem;
+}
+
+#connection .messageTop .backToMessages svg {
+    font-size: 30px;
+    color: #333;
+    cursor: pointer;
+    margin-right: 1rem;
+    display: none;
 }
 
 #connection .messageTop .userImg {
@@ -271,7 +269,7 @@ textarea::-webkit-scrollbar {
     overflow-y: hidden auto;
 }
 
-.ReactModalPortal .newUsers h2{
+.ReactModalPortal .newUsers h2 {
     padding: 1rem 0;
     border-bottom: 1px solid #ddd;
 }
@@ -310,3 +308,27 @@ textarea::-webkit-scrollbar {
 .ReactModalPortal .newUsers .user .userContent {}
 
 .ReactModalPortal .newUsers .user .userContent .userContentName {}
+
+
+
+/* ------------ KÜÇÜK EKRAN GÖRÜNÜMÜ! --------------- */
+
+@media screen and (max-width: 900px) {
+    #users {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        max-width: 100%;
+    }
+
+    #users.usersDrawr {
+        transform: translateX(-100%);
+    }
+
+    #connection .messageTop .backToMessages svg {
+        display: block !important;
+    }
+
+}
